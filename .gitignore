@@ -90,3 +90,10 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

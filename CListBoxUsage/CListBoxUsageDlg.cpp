@@ -7,11 +7,30 @@
 #include "CListBoxUsage.h"
 #include "CListBoxUsageDlg.h"
 #include "afxdialogex.h"
+#include <map>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
+enum Month {
+	Jan = 1, Feb, Marc, April, May, June, July, Aug, Sept, Oct, Nov, Dec
+};
+
+const std::map<Month, CString> monthStrings{
+	{Jan, L"Január"},
+	{Feb, L"Február"},
+	{Marc, L"Március"},
+	{April, L"Április"},
+	{May, L"Május"},
+	{June, L"Június"},
+	{July, L"Július"},
+	{Aug, L"Augusztus"},
+	{Sept, L"Szeptember"},
+	{Oct, L"Október"},
+	{Nov, L"November"},
+	{Dec, L"December"}
+};
 
 // CAboutDlg dialog used for App About
 
@@ -105,6 +124,41 @@ BOOL CCListBoxUsageDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	int index = m_listAvailable.AddString(monthStrings.at(Jan));
+	m_listAvailable.SetItemData(index, Jan);
+
+	m_listAvailable.AddString(monthStrings.at(Feb));
+	m_listAvailable.SetItemData(index, Feb);
+
+	m_listAvailable.AddString(monthStrings.at(Marc));
+	m_listAvailable.SetItemData(index, Marc);
+
+	m_listAvailable.AddString(monthStrings.at(April));
+	m_listAvailable.SetItemData(index, April);
+
+	m_listAvailable.AddString(monthStrings.at(May));
+	m_listAvailable.SetItemData(index, May);
+
+	m_listAvailable.AddString(monthStrings.at(June));
+	m_listAvailable.SetItemData(index, June);
+
+	m_listAvailable.AddString(monthStrings.at(July));
+	m_listAvailable.SetItemData(index, July);
+
+	m_listAvailable.AddString(monthStrings.at(Aug));
+	m_listAvailable.SetItemData(index, Aug);
+
+	m_listAvailable.AddString(monthStrings.at(Sept));
+	m_listAvailable.SetItemData(index, Sept);
+
+	m_listAvailable.AddString(monthStrings.at(Oct));
+	m_listAvailable.SetItemData(index, Oct);
+
+	m_listAvailable.AddString(monthStrings.at(Nov));
+	m_listAvailable.SetItemData(index, Nov);
+
+	m_listAvailable.AddString(monthStrings.at(Dec));
+	m_listAvailable.SetItemData(index, Dec);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
