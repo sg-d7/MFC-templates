@@ -59,12 +59,17 @@ CCListBoxUsageDlg::CCListBoxUsageDlg(CWnd* pParent /*=nullptr*/)
 void CCListBoxUsageDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LST_AVAILABLE, m_listAvailable);
+	DDX_Control(pDX, IDC_LST_TARGET, m_listTarget);
 }
 
 BEGIN_MESSAGE_MAP(CCListBoxUsageDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BTN_ADD, &CCListBoxUsageDlg::OnBnClickedBtnAdd)
+	ON_BN_CLICKED(IDC_BTN_REMOVE, &CCListBoxUsageDlg::OnBnClickedBtnRemove)
+	ON_BN_CLICKED(IDC_BTN_REMOVEALL, &CCListBoxUsageDlg::OnBnClickedBtnRemoveall)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +158,21 @@ HCURSOR CCListBoxUsageDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CCListBoxUsageDlg::OnBnClickedBtnAdd()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+void CCListBoxUsageDlg::OnBnClickedBtnRemove()
+{
+	// TODO: Add your control notification handler code here
+}
+
+
+void CCListBoxUsageDlg::OnBnClickedBtnRemoveall()
+{
+	// TODO: Add your control notification handler code here
+}
