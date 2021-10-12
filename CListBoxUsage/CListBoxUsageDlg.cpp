@@ -217,6 +217,15 @@ HCURSOR CCListBoxUsageDlg::OnQueryDragIcon()
 void CCListBoxUsageDlg::OnBnClickedBtnAdd()
 {
 	// TODO: Add your control notification handler code here
+	int selindex = m_listAvailable.GetCurSel();
+	if (selindex != LB_ERR)
+	{
+		Month selMonth = static_cast<Month>(m_listAvailable.GetItemData(selindex));
+		m_listAvailable.DeleteString(selindex);
+
+		int addindex = m_listTarget.AddString(monthStrings.at(selMonth));
+		m_listTarget.SetItemData(addindex, selMonth);
+	}
 }
 
 
